@@ -29,15 +29,16 @@ string[] CreatyStringArray(string[] arr)
 {
     for (int i = 0; i < count; i++)
     {
-        
-        Console.WriteLine($"Введите слово {i+1}");
-        string text = Console.ReadLine();
-        if(text == null) 
+
+        Console.WriteLine($"Введите слово {i + 1}");
+        string? text = Console.ReadLine();
+        if (String.IsNullOrEmpty(text))
         {
-        Console.WriteLine("Введите значение еще раз");
-        text = Console.ReadLine();
+            Console.WriteLine("Введите корректное значение");
+            text = Console.ReadLine();
         }
         else arr[i] = text;
+
     }
     return arr;
 }
