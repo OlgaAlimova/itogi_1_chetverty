@@ -32,12 +32,15 @@ string[] CreatyStringArray(string[] arr)
 
         Console.WriteLine($"Введите слово {i + 1}");
         string? text = Console.ReadLine();
+        link:
         if (String.IsNullOrEmpty(text))
         {
             Console.WriteLine("Введите корректное значение");
             text = Console.ReadLine();
+            goto link;
+            
         }
-        else arr[i] = text;
+        arr[i] = text;
 
     }
     return arr;
